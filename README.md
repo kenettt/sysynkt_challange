@@ -20,7 +20,14 @@ pnpm install   # in the root
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
 
-# 3. Start development environment
+# 3. Setup database
+pnpm db:up
+
+cd backend
+php artisan migrate --seed
+cd ..
+
+# 4. Start development environment
 pnpm dev
 
 
