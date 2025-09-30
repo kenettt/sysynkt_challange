@@ -10,6 +10,13 @@ A small monorepo project (**Laravel backend** + **Vite/React frontend**) with Do
 - PHP + Composer
 - Docker & Docker Compose
 
+# If you don't have pnpm:
+
+corepack enable
+corepack prepare pnpm@latest --activate
+
+# (alternative) npm i -g pnpm
+
 ```bash
 # 1. Install dependencies
 cd backend && composer install && cd ..
