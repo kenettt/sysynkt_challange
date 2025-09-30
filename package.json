@@ -1,0 +1,14 @@
+{
+  "name": "monorepo-items",
+  "private": true,
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "be": "cd backend && php artisan serve --host=0.0.0.0 --port=8000",
+    "fe": "cd frontend && pnpm run dev -- --host",
+    "dev": "pnpm run db:up && concurrently -k -n BE,FE \"pnpm:be\" \"pnpm:fe\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

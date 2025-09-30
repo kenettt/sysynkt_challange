@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* taust + tekst */
+  --color-background: oklch(0.98 0.01 250); /* väga hele sinakas-hall */
+  --color-foreground: oklch(0.23 0.03 250); /* tume tekst */
+
+  /* pind + kaart */
+  --color-card: oklch(0.99 0.005 250);
+  --color-card-foreground: oklch(0.23 0.03 250);
+
+  /* primaarsed toonid */
+  --color-primary: oklch(0.72 0.11 178); /* sinakas-türkiis */
+  --color-primary-foreground: oklch(0.18 0.02 250); /* tume tekst nupu peal */
+
+  /* sekundaarsed/aktsent/muted */
+  --color-secondary: oklch(0.95 0.02 250);
+  --color-secondary-foreground: oklch(0.3 0.03 250);
+
+  --color-accent: oklch(0.93 0.07 350); /* roosakas aktsent */
+  --color-accent-foreground: oklch(0.23 0.03 250);
+
+  --color-muted: oklch(0.96 0.01 250);
+  --color-muted-foreground: oklch(0.5 0.02 250);
+
+  /* staatused */
+  --color-success: oklch(0.86 0.12 145);
+  --color-success-foreground: oklch(0.18 0.02 250);
+
+  --color-warning: oklch(0.9 0.12 85);
+  --color-warning-foreground: oklch(0.23 0.05 70);
+
+  --color-destructive: oklch(0.66 0.17 27);
+  --color-destructive-foreground: oklch(0.99 0.01 250);
+
+  /* piirjooned/input/ring */
+  --color-border: oklch(0.9 0.02 250);
+  --color-input: oklch(0.9 0.02 250);
+  --color-ring: oklch(0.72 0.11 178);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes task-complete {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes task-claim {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.02) rotate(1deg);
+  }
+  75% {
+    transform: scale(1.02) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+.animate-task-complete {
+  animation: task-complete 0.5s ease-out;
+}
+.animate-task-claim {
+  animation: task-claim 0.45s ease-out;
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
